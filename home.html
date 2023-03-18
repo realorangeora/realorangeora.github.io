@@ -4,12 +4,88 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="device-width">
 	<link rel="stylesheet" href="style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-<meta name="description" content="Offical Orange Orangutangs Page to download our GTAG Fan Game!">
+<meta name="description" content="Official Orange Orangutangs Page to download our GTAG Fan Game!">
 	<title>Orange Orangutangs</title>
+	<style>
+		#content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#content img {
+    width: 25%;
+    min-width: 100px;
+}
+
+img {
+	-webkit-user-drag: none;
+}
+
+.highlight .text {
+    background-color: yellow;
+}
+
+a {
+	text-decoration: none;
+}
+
+#cookie-popup {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: #f1f1f1;
+			padding: 10px;
+			box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+			display: none;
+			z-index: 9999;
+		}
+		
+		/* Style for the button to accept cookies */
+		#accept-cookies {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px;
+			border: none;
+			cursor: pointer;
+			margin-left: 10px;
+		}
+		
+		/* Style for the cookie message text */
+		#cookie-message {
+			margin: 0;
+		}
+
+		
+body {
+  overflow: overlay;
+}
+
+.div1 {
+  background: grey;
+  margin-top: 200px;
+  margin-bottom: 20px;
+  height: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(90, 90, 90);
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+	</style>
 </head>
 <body>
 
@@ -17,7 +93,7 @@
 
 	<div class="colorful-bg">
 		
-		<div class="container">
+		<div class="container" id="mydiv">
 			<img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png" alt="Discord" width="300" height="610">
 			<div class="text">
 			  <h2>Our Discord!</h2>
@@ -25,8 +101,11 @@
 			  <a href="https://discord.gg/HJvdWNqF"><button class="button-38" role="button">Join</button></a>
 			</div>
 
+			
 			<h1> </h1>
 
+
+			
 		  <div>
 			<h1>Orange Orangutangs</h1>
 		  <p>Download the first version of Orange Orangutangs but you need a supported VR, The required VR types right now are Oculus Quest 1, 2 or Pro.</p>
@@ -52,8 +131,92 @@
 				<h2>Von - Helped MM setting up the GitHub Account</h2>
 			</div>
 
-		  </div>
+			
 
-		  
+		  </div class="dev-part">
+
+		  <h1> </h1>
+
+		  <center><h1>Development</h1></center>
+
+		  <div id="content">
+			<img src="/img/image.png" alt="pic1">
+			<img src="/img/image2.png" alt="pic2">
+			<img src="/img/image3.png" alt="pic3">
+			<img src="/img/image4.png" alt="pic4">
+			
+		 </div>
+
+		 <h1> </h1>
+
+		<center><p>Orange Orangutangs is still being updated and worked on any bugs and issues please report in the <a href="#mydiv" class="scroll-link">Discord Server</a> you telling us helps the game get more stable and efficient, we need more people helping us with the game if you are up for the job join the server and ask the owners <code>@Keeleb Is LOUD!</code> and <code>@Preblos</code> you might get a google docs link to fill out!</p></center>
+
+		<center><p>A source code for the game is not available due to it not being fully released yes we have an APK but this isnt the full game, its being created with Unity for the engine we want you to have a fun experience for you to have with our Gorilla Tag fan game so have fun will you?</p></center>
+
+		<div id="cookie-popup">
+			<p id="cookie-message">This website uses cookies to improve your experience. By continuing to use this website, you consent to the use of cookies in accordance with our Cookie Policy.</p>
+			<button id="accept-cookies">I accept</button>
+		</div>
+
+
+		<center><div id="online-discord-users">
+			<h1>Online on Discord Server</h1>
+			<iframe src="https://discord.com/widget?id=1086382696449724567&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+			<p>These are people who are online and are on the server!</p>
+		</div></center>
+
+		<center><p>Website created by <a href="https://twitter.com/MooManisLoud">MooMan</a></p></center>
+
+		<script>
+			// When the page finishes loading
+window.onload = function() {
+    // Add an event listener to all links with the class "scroll-link"
+    var links = document.getElementsByClassName("scroll-link");
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent the default link behavior
+            var targetDivId = this.getAttribute("href"); // Get the ID of the target div
+            var targetDiv = document.querySelector(targetDivId); // Find the target div element
+            if (targetDiv) {
+                // Scroll to the target div
+                targetDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+                // Add the "highlight" class to the target div for 2 seconds
+                targetDiv.classList.add("highlight");
+                setTimeout(function() {
+                    targetDiv.classList.remove("highlight");
+                }, 2000);
+            }
+        });
+    }
+};
+		</script>
+
+<script>
+	// Get the cookie popup element and the accept button element
+	var cookiePopup = document.getElementById("cookie-popup");
+	var acceptButton = document.getElementById("accept-cookies");
+	
+	// Check if the user has already accepted cookies
+	var cookiesAccepted = localStorage.getItem("cookies-accepted");
+	
+	if (!cookiesAccepted) {
+		// If the user has not yet accepted cookies, show the popup
+		cookiePopup.style.display = "block";
+	}
+	
+	// Add an event listener to the accept button
+	acceptButton.addEventListener("click", function() {
+		// Set a flag in localStorage to indicate that cookies have been accepted
+		localStorage.setItem("cookies-accepted", true);
+		// Hide the popup
+		cookiePopup.style.display = "none";
+	});
+</script>
+
+<script>
+	if (/Mobi|Android/i.test(navigator.userAgent)) {
+  window.location.href = "https://realorangeora.github.io/phone";
+}
+</script>
 </body>
 </html>
